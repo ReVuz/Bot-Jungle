@@ -45,7 +45,13 @@ const HeroSection = () => {
               href={ "https://docs.google.com/forms/d/1cJpkWmfHd3ZNyJ0WiWnMa_OU1FyOvjMYG-OinB816Aw/viewform?edit_requested=true"}
               className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-500 to-secondary-500 bg-slate-600 hover:bg-slate-700 text-white"
             >
-              Register
+           <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+          <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)] py-1" />
+          <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
+            Register 
+          </span>
+        </button>
+
             </Link>
           </div>
         </motion.div>
