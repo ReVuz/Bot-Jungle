@@ -5,6 +5,7 @@ import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
 import { useState,useEffect } from "react";
 import styled from "styled-components";
+import { FloatingNav } from "./components/FloatingNav";
 
 
 const Container = styled.div`
@@ -42,7 +43,7 @@ export default function Home() {
       {isLoading ? (
         <Loading />
       ) : (<Container>
-      <Navbar/>
+      <FloatingNav/>
       <div className="container mt-24 mx-auto px-12 py-4">
         <HeroSection/>
       </div>

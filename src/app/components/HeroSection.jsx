@@ -45,7 +45,7 @@ const HeroSection = () => {
               href={ "https://docs.google.com/forms/d/1cJpkWmfHd3ZNyJ0WiWnMa_OU1FyOvjMYG-OinB816Aw/viewform?edit_requested=true"}
               className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-500 to-secondary-500 bg-slate-600 hover:bg-slate-700 text-white"
             >
-              Get Started
+              Register
             </Link>
           </div>
         </motion.div>
