@@ -1,11 +1,10 @@
 "use client"
-import Image from "next/image";
 import Loading from "./components/loading";
 import HeroSection from "./components/HeroSection";
-import Navbar from "./components/Navbar";
 import { useState,useEffect } from "react";
 import styled from "styled-components";
 import { FloatingNav } from "./components/FloatingNav";
+import { About } from "./components/About";
 
 
 const Container = styled.div`
@@ -46,6 +45,7 @@ export default function Home() {
       <FloatingNav/>
       <div className="container mt-24 mx-auto px-12 py-4">
         <HeroSection/>
+        <About />
       </div>
       </Container>)}
       </main>
