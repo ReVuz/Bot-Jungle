@@ -41,7 +41,7 @@ export function About() {
     },
   ];
   return (
-    <div className="relative z-20 py-8 lg:py-28 max-w-7xl mx-auto">
+    <div className="relative z-20 py-8 lg:py-28 max-w-7xl mx-auto" id="about">
       <div className="px-8">
         <h4 className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-white">
           Packed with Exciting Features
