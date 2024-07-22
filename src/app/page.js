@@ -5,6 +5,7 @@ import { useState,useEffect } from "react";
 import styled from "styled-components";
 import { FloatingNav } from "./components/FloatingNav";
 import { About } from "./components/About";
+import { Steps } from "./components/Steps";
 
 
 const Container = styled.div`
@@ -28,6 +29,8 @@ const Container = styled.div`
 `;
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
 
   useEffect(() => {
     // Simulate loading time
@@ -42,10 +45,11 @@ export default function Home() {
       {isLoading ? (
         <Loading />
       ) : (<Container>
-      <FloatingNav/>
+      {!isModalOpen && <FloatingNav />}
       <div className="container mt-24 mx-auto px-12 py-4">
-        <HeroSection/>
+       <HeroSection setModalOpen={setIsModalOpen} />
         <About />
+        <Steps />
       </div>
       </Container>)}
       </main>

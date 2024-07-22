@@ -11,7 +11,12 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-export function AnimatedModalDemo() {
+export function AnimatedModalDemo({ onClose }) {
+  const [modalIsOpen, setModalIsOpen] = React.useState(false);
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
   const images = [
     "https://images.unsplash.com/photo-1586374579358-9d19d632b6df?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?q=80&w=2672&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -115,9 +120,9 @@ export function AnimatedModalDemo() {
 
           </ModalContent>
           <ModalFooter className="gap-4">
-            <button className="px-2 py-1 bg-gray-200 text-black dark:bg-black dark:border-black dark:text-white border border-gray-300 rounded-md text-sm w-28">
+            {/* <button onClick={closeModal} className="px-2 py-1 bg-gray-200 text-black dark:bg-black dark:border-black dark:text-white border border-gray-300 rounded-md text-sm w-28">
               Cancel
-            </button>
+            </button> */}
             <Link
               href={ "https://docs.google.com/forms/d/1cJpkWmfHd3ZNyJ0WiWnMa_OU1FyOvjMYG-OinB816Aw/viewform?edit_requested=true"}
             >
