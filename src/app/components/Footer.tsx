@@ -1,13 +1,13 @@
 "use client"
 import React from "react";
-import {Container, Logo, SocialMediaIcons, SocialMediaIconsLink, WebsiteRights, Wrapper} from './footer-elements'
+import {Logo, SocialMediaIcons, SocialMediaIconsLink, WebsiteRights, Wrapper} from './footer-elements'
 import {BsInstagram, BsLinkedin, BsX, BsYoutube} from'react-icons/bs';
 
 type Props = {}
 
 const Footer = (props : Props) => {
     return (
-        <Container>
+        <div>
             <Wrapper>
                 <Logo href='/'>
                     Bot Jungle
@@ -30,7 +30,7 @@ const Footer = (props : Props) => {
                     </SocialMediaIconsLink>
                 </SocialMediaIcons>
             </Wrapper>
-        </Container>
+        </div>
     )
 }
 
