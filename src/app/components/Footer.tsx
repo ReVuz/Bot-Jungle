@@ -1,7 +1,7 @@
 "use client"
 import React from "react";
 import {Logo, SocialMediaIcons, SocialMediaIconsLink, WebsiteRights, Wrapper} from './footer-elements'
-import {BsInstagram, BsLinkedin, BsX, BsYoutube} from'react-icons/bs';
+import {BsInstagram, BsLinkedin, BsTwitterX, BsX, BsYoutube} from'react-icons/bs';
 
 type Props = {}
 
@@ -23,7 +23,7 @@ const Footer = (props : Props) => {
                         <BsInstagram/>
                     </SocialMediaIconsLink>
                       <SocialMediaIconsLink href="//www.x.com" target="_blank" aria-label="Twitter">
-                        <BsX/>
+                        <BsTwitterX/>
                     </SocialMediaIconsLink>
                       <SocialMediaIconsLink href="//www.youtube.com" target="_blank" aria-label="Youtube">
                         <BsYoutube/>
