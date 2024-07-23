@@ -7,6 +7,7 @@ import { FloatingNav } from "./components/FloatingNav";
 import { About } from "./components/About";
 import { Steps } from "./components/Steps";
 import { Quote } from "./components/Quote";
+import Footer from "./components/Footer";
 
 const Container = styled.div`
   height: 100vh;
@@ -51,6 +52,7 @@ export default function Home() {
         <About />
         <Steps />
         <Quote />
+        <Footer/>
       </div>
       </Container>)}
       </main>
