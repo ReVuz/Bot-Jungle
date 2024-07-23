@@ -24,7 +24,7 @@ export function Steps() {
             containerClassName="bg-emerald-900"
           />
         </Card>
-        <Card title="Create the project" icon={<AceternityIcon />}>
+        <Card title="Create the project" icon={<AceternityIcon /> }>
           <CanvasRevealEffect
             animationSpeed={3}
             containerClassName="bg-black"
