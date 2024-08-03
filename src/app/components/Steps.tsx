@@ -186,7 +186,7 @@ const Modal = ({ onClose, children }: { onClose: () => void; children: React.Rea
   className="fixed inset-0 z-50 flex items-center justify-center bg-black border-white bg-opacity-50"
   onClick={onClose}
 >
-          <Icon className="absolute h-6 w-6 -top-3 -left-3 text-white " />
+        <Icon className="absolute h-6 w-6 -top-3 -left-3 text-white " />
         <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-white " />
         <Icon className="absolute h-6 w-6 -top-3 -right-3 text-white " />
         <Icon className="absolute h-6 w-6 -bottom-3 -right-3 text-white " />
