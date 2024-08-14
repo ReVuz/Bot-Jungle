@@ -9,6 +9,7 @@ import { Steps } from "./components/Steps";
 import { Quote } from "./components/Quote";
 import Footer from "./components/Footer";
 import { ExpandableCardDemo } from "./components/ExpandableCardDemo";
+import Sponsor from "./components/Sponsor";
 
 const Container = styled.div`
   height: 100vh;
@@ -47,11 +48,11 @@ export default function Home() {
         <Loading />
       ) : (
         <Container>
-          {!isModalOpen}
           <div className="container mt-24 mx-auto px-12 py-4">
-            <HeroSection setModalOpen={setIsModalOpen} />
+            <HeroSection />
             <About />
-            <ExpandableCardDemo />
+            <Steps />
+            <Sponsor />
             <Quote />
             <Footer />
           </div>

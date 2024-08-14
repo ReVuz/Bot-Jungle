@@ -140,7 +140,7 @@ export function ExpandableCardDemo() {
             layoutId={`card-${card.title}-${id}`}
             key={card.title}
             onClick={() => setActive(card)}
-            className="p-4 flex flex-col  hover:bg-neutral-50 hover:bg-neutral-800 rounded-xl cursor-pointer"
+            className="p-4 flex flex-col border border-purple-300 bg-white hover:bg-neutral-800 rounded-xl cursor-pointer"
           >
             <div className="flex gap-4 flex-col  w-full">
               <motion.div layoutId={`image-${card.title}-${id}`}>
@@ -213,7 +213,7 @@ const cards = [
     title: "Robotics Ideathon",
     src: "https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?q=80&w=2672&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     ctaText: "Visit",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaLink: "",
     content: () => {
       return (
         <p>
@@ -227,7 +227,7 @@ const cards = [
     title: "Bot Jungle Workshop",
     src: "https://images.unsplash.com/photo-1661078483001-683e69a6fb97?q=80&w=2666&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     ctaText: "Visit",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaLink: "",
     content: () => {
       return (
         <p>
@@ -240,9 +240,9 @@ const cards = [
   {
     description: "Event 3",
     title: "Bot Jungle Games",
-    src: "https://images.unsplash.com/photo-1562758778-e5638b5b6607?q=80&w=2160&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    src: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvisittrivalley.com%2Fwp-content%2Fuploads%2F2018%2F03%2Fboxing-coniglio-DSC_0010-1.jpg&f=1&nofb=1&ipt=7d6067debb52c5807ae72028a0dc6d0c34926c37c2a50a6354cdc59844ea5de3&ipo=images",
     ctaText: "Visit",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaLink: "",
     content: () => {
       return (
         <p>
@@ -254,9 +254,9 @@ const cards = [
   {
     description: "Event 4",
     title: "Classic Robo Wars",
-    src: "/img/roboticsthumbnail.png",
+    src: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.hollywoodreporter.com%2Fsites%2Fdefault%2Ffiles%2F2016%2F06%2F143333_6507-h_2016.jpg&f=1&nofb=1&ipt=be0503a84186895f41c965077aa12d665cb9f2d75571ab94558ed8eaa007f75c&ipo=images",
     ctaText: "Visit",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaLink: "",
     content: () => {
       return (
         <p>
