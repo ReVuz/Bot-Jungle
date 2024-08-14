@@ -1,7 +1,7 @@
-"use client"
+"use client";
 import Loading from "./components/loading";
 import HeroSection from "./components/HeroSection";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { FloatingNav } from "./components/FloatingNav";
 import { About } from "./components/About";
@@ -16,14 +16,14 @@ const Container = styled.div`
   scroll-behavior: smooth;
   overflow-y: auto;
   scrollbar-width: none;
-  color : white;
+  color: white;
   background-color: black; /* Set background to black */
 
-  /* Create the grid pattern using background-image */
-  background-image: 
-    linear-gradient(to right, #333 1px, transparent 1px), /* Horizontal lines */
-    linear-gradient(to bottom, #333 1px, transparent 1px); /* Vertical lines */
-  background-size: 60px 60px; /* Control grid spacing */
+  // /* Create the grid pattern using background-image */
+  // background-image:
+  //   linear-gradient(to right, #333 1px, transparent 1px), /* Horizontal lines */
+  //   linear-gradient(to bottom, #333 1px, transparent 1px); /* Vertical lines */
+  // background-size: 60px 60px; /* Control grid spacing */
 
   &::-webkit-scrollbar {
     display: none;
@@ -32,7 +32,6 @@ const Container = styled.div`
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
 
   useEffect(() => {
     // Simulate loading time
@@ -46,16 +45,18 @@ export default function Home() {
     <main className="flex min-h-screen flex-col bg-[#121212]">
       {isLoading ? (
         <Loading />
-      ) : (<Container>
-      {!isModalOpen && <FloatingNav />}
-      <div className="container mt-24 mx-auto px-12 py-4">
-       <HeroSection setModalOpen={setIsModalOpen} />
-        <About />
-        <ExpandableCardDemo />
-        <Quote />
-        <Footer/>
-      </div>
-      </Container>)}
-      </main>
+      ) : (
+        <Container>
+          {!isModalOpen}
+          <div className="container mt-24 mx-auto px-12 py-4">
+            <HeroSection setModalOpen={setIsModalOpen} />
+            <About />
+            <ExpandableCardDemo />
+            <Quote />
+            <Footer />
+          </div>
+        </Container>
+      )}
+    </main>
   );
 }

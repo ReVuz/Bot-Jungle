@@ -29,17 +29,14 @@ export function AnimatedModalDemo({ onClose }) {
       <Modal>
         <ModalTrigger className="bg-transparent text-white group/modal-btn">
           <button className="bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6  text-white inline-block">
-  <span className="absolute inset-0 overflow-hidden rounded-full">
-    <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-  </span>
-  <div className="relative z-10 text-[20px] rounded-full bg-zinc-950 py-2 px-6 ring-1 ring-white/10 ">
-    <span>
-      Register Now
-    </span>
-   
-  </div>
-  <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-blue-400/90 to-blue-400/0 transition-opacity duration-500 group-hover:opacity-40" />
-</button>
+            <span className="absolute inset-0 overflow-hidden rounded-full">
+              <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+            </span>
+            <div className="relative z-10 text-[20px] rounded-xl bg-zinc-950 py-2 px-6 ring-1 ring-white/10 ">
+              <span>Register Now</span>
+            </div>
+            <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-blue-400/90 to-blue-400/0 transition-opacity duration-500 group-hover:opacity-40" />
+          </button>
         </ModalTrigger>
         <ModalBody>
           <ModalContent>
@@ -80,61 +77,64 @@ export function AnimatedModalDemo({ onClose }) {
               ))}
             </div>
             <div className="py-10 flex flex-wrap gap-x-4 gap-y-6 items-start justify-start max-w-sm mx-auto">
-  <div className="flex items-center justify-center">
-    <PlaneIcon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
-    <span className="text-neutral-700 dark:text-neutral-300 text-sm">
-      5 Competitions
-    </span>
-  </div>
-  <div className="flex items-center justify-center">
-    <ElevatorIcon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
-    <span className="text-neutral-700 dark:text-neutral-300 text-sm">
-      12 Workshops
-    </span>
-  </div>
-  <div className="flex items-center justify-center">
-    <VacationIcon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
-    <span className="text-neutral-700 dark:text-neutral-300 text-sm">
-      23 Registrations
-    </span>
-  </div>
-  <div className="flex items-center justify-center">
-    <FoodIcon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
-    <span className="text-neutral-700 dark:text-neutral-300 text-sm">
-      Free Meals
-    </span>
-  </div>
-  <div className="flex items-center justify-center">
-    <MicIcon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
-    <span className="text-neutral-700 dark:text-neutral-300 text-sm">
-      Live Talks
-    </span>
-  </div>
-  <div className="flex items-center justify-center">
-    <ParachuteIcon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
-    <span className="text-neutral-700 dark:text-neutral-300 text-sm">
-      Fun Activities
-    </span>
-  </div>
-</div>
-
+              <div className="flex items-center justify-center">
+                <PlaneIcon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+                <span className="text-neutral-700 dark:text-neutral-300 text-sm">
+                  5 Competitions
+                </span>
+              </div>
+              <div className="flex items-center justify-center">
+                <ElevatorIcon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+                <span className="text-neutral-700 dark:text-neutral-300 text-sm">
+                  12 Workshops
+                </span>
+              </div>
+              <div className="flex items-center justify-center">
+                <VacationIcon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+                <span className="text-neutral-700 dark:text-neutral-300 text-sm">
+                  23 Registrations
+                </span>
+              </div>
+              <div className="flex items-center justify-center">
+                <FoodIcon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+                <span className="text-neutral-700 dark:text-neutral-300 text-sm">
+                  Free Meals
+                </span>
+              </div>
+              <div className="flex items-center justify-center">
+                <MicIcon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+                <span className="text-neutral-700 dark:text-neutral-300 text-sm">
+                  Live Talks
+                </span>
+              </div>
+              <div className="flex items-center justify-center">
+                <ParachuteIcon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+                <span className="text-neutral-700 dark:text-neutral-300 text-sm">
+                  Fun Activities
+                </span>
+              </div>
+            </div>
           </ModalContent>
           <ModalFooter className="gap-4">
             {/* <button onClick={closeModal} className="px-2 py-1 bg-gray-200 text-black dark:bg-black dark:border-black dark:text-white border border-gray-300 rounded-md text-sm w-28">
               Cancel
             </button> */}
             <Link
-              href={ "https://docs.google.com/forms/d/1cJpkWmfHd3ZNyJ0WiWnMa_OU1FyOvjMYG-OinB816Aw/viewform?edit_requested=true"}
+              href={
+                "https://docs.google.com/forms/d/1cJpkWmfHd3ZNyJ0WiWnMa_OU1FyOvjMYG-OinB816Aw/viewform?edit_requested=true"
+              }
             >
-             <Link
-              href={ "https://docs.google.com/forms/d/1cJpkWmfHd3ZNyJ0WiWnMa_OU1FyOvjMYG-OinB816Aw/viewform?edit_requested=true"}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-            <button className="bg-black text-white dark:bg-white dark:text-black text-sm px-2 py-1 rounded-md border border-black w-28">
-              Register Now
-            </button>
-            </Link>
+              <Link
+                href={
+                  "https://docs.google.com/forms/d/1cJpkWmfHd3ZNyJ0WiWnMa_OU1FyOvjMYG-OinB816Aw/viewform?edit_requested=true"
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="bg-black text-white dark:bg-white dark:text-black text-sm px-2 py-1 rounded-md border border-black w-28">
+                  Register Now
+                </button>
+              </Link>
             </Link>
           </ModalFooter>
         </ModalBody>
