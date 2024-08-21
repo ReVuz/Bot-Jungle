@@ -3,7 +3,7 @@ import Loading from "./components/loading";
 import HeroSection from "./components/HeroSection";
 import { useState, useEffect } from "react";
 import styled from "styled-components";
-import { FloatingNav } from "./components/FloatingNav";
+import { FloatingNav } from "./components/Navbar/FloatingNav";
 import { About } from "./components/About";
 import { Steps } from "./components/Steps";
 import { Quote } from "./components/Quote";
@@ -21,9 +21,9 @@ const Container = styled.div`
   background-color: black; /* Set background to black */
 
   // /* Create the grid pattern using background-image */
-  // background-image:
-  //   linear-gradient(to right, #333 1px, transparent 1px), /* Horizontal lines */
-  //   linear-gradient(to bottom, #333 1px, transparent 1px); /* Vertical lines */
+  // background-image: linear-gradient(to right, #333 1px, transparent 1px),
+  //   /* Horizontal lines */ linear-gradient(to bottom, #333 1px, transparent 1px);
+  // /* Vertical lines */
   // background-size: 60px 60px; /* Control grid spacing */
 
   &::-webkit-scrollbar {
@@ -38,16 +38,18 @@ export default function Home() {
     // Simulate loading time
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 4200); // Adjust this time as needed
+    }, 42); // Adjust this time as needed
 
     return () => clearTimeout(timer);
   }, []);
   return (
     <main className="flex min-h-screen flex-col bg-[#121212]">
       {isLoading ? (
-        <Loading />
+        // <Loading />
+        <h1>Loading...</h1>
       ) : (
         <Container>
+          <FloatingNav />
           <div className="container mt-24 mx-auto px-12 py-4">
             <HeroSection />
             <About />

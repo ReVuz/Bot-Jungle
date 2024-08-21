@@ -2,12 +2,12 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence, useScroll } from "framer-motion";
 import Link from "next/link";
+import "./styles.css";
 
 const navItems = [
   { name: "Home", link: "#home" },
   { name: "About", link: "#about" },
   { name: "Events", link: "#events" },
-  
 ];
 
 export const FloatingNav = () => {
@@ -44,8 +44,7 @@ export const FloatingNav = () => {
         transition={{
           duration: 0.2,
         }}
-        className=
-          "flex max-w-fit md:min-w-[100vw] lg:min-w-fit fixed z-[300] top-8 inset-x-0 mx-auto px-6 py-2 rounded-none border border-green/.3 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] items-center justify-center space-x-4"
+        className="flex max-w-fit md:min-w-[100vw] lg:min-w-fit fixed z-[300] top-8 inset-x-0 mx-auto px-6 py-2 rounded-none border border-green/.3 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] items-center justify-center space-x-4"
         style={{
           backdropFilter: "blur(16px) saturate(180%)",
           backgroundColor: "rgba(17, 25, 40, 0.75)",
@@ -57,21 +56,29 @@ export const FloatingNav = () => {
           <Link
             key={`link=${idx}`}
             href={navItem.link}
-            className=
-              "relative dark:text-neutral-50 items-center flex space-x-1 text-white dark:hover:text-black hover:text-neutral-400"
+            className="relative dark:text-neutral-50 items-center flex space-x-1 text-white dark:hover:text-black hover:text-neutral-400"
           >
             <span className="text-sm !cursor-pointer">{navItem.name}</span>
           </Link>
         ))}
-         <Link
-              href={ "https://docs.google.com/forms/d/1cJpkWmfHd3ZNyJ0WiWnMa_OU1FyOvjMYG-OinB816Aw/viewform?edit_requested=true"}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-        <button className="border text-sm font-medium relative border-white/[0.2] text-white px-4 py-2 rounded-full">
-          <span>Register</span>
-          <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
-        </button>
+        <Link
+          href={
+            "https://docs.google.com/forms/d/1cJpkWmfHd3ZNyJ0WiWnMa_OU1FyOvjMYG-OinB816Aw/viewform?edit_requested=true"
+          }
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button type="button" className="btn">
+            <strong>Register</strong>
+            <div id="container-stars">
+              <div id="stars"></div>
+            </div>
+
+            <div id="glow">
+              <div className="circle"></div>
+              <div className="circle"></div>
+            </div>
+          </button>
         </Link>
       </motion.div>
     </AnimatePresence>
