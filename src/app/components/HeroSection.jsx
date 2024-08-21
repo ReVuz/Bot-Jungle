@@ -60,10 +60,10 @@ const HeroSection = ({ setModalOpen }) => {
       width={300}
       height={300}
     /> */}
-            <Spline
+            {/* <Spline
               className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
               scene="https://prod.spline.design/qY5v4aeB1NZCTv5G/scene.splinecode"
-            />
+            /> */}
           </div>
         </motion.div>
       </div>

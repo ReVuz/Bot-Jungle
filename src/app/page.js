@@ -10,6 +10,7 @@ import { Quote } from "./components/Quote";
 import Footer from "./components/Footer";
 import { ExpandableCardDemo } from "./components/ExpandableCardDemo";
 import Sponsor from "./components/Sponsor";
+import Spline from "@splinetool/react-spline"; // Import Spline library
 
 const Container = styled.div`
   height: 100vh;
@@ -18,18 +19,21 @@ const Container = styled.div`
   overflow-y: auto;
   scrollbar-width: none;
   color: white;
-  background-color: black; /* Set background to black */
-
-  // /* Create the grid pattern using background-image */
-  // background-image: linear-gradient(to right, #333 1px, transparent 1px),
-  //   /* Horizontal lines */ linear-gradient(to bottom, #333 1px, transparent 1px);
-  // /* Vertical lines */
-  // background-size: 60px 60px; /* Control grid spacing */
-
+  background-color: transparent; /* Set background to transparent */
   &::-webkit-scrollbar {
     display: none;
   }
 `;
+
+const SplineContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+`;
+
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -42,13 +46,18 @@ export default function Home() {
 
     return () => clearTimeout(timer);
   }, []);
+
   return (
     <main className="flex min-h-screen flex-col bg-[#121212]">
       {isLoading ? (
         // <Loading />
         <h1>Loading...</h1>
       ) : (
-        <Container>
+        // <Container>
+        <div className="z-0 bg-black">
+          <SplineContainer>
+            <Spline scene="https://prod.spline.design/Y0RaBNGpPepinEO9/scene.splinecode" />
+          </SplineContainer>
           <FloatingNav />
           <div className="container mt-24 mx-auto px-12 py-4">
             <HeroSection />
@@ -58,7 +67,8 @@ export default function Home() {
             <Quote />
             <Footer />
           </div>
-        </Container>
+        </div>
+        // </Container>
       )}
     </main>
   );
