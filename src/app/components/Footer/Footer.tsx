@@ -14,14 +14,12 @@ import {
   BsX,
   BsYoutube,
 } from "react-icons/bs";
-import Spline from "@splinetool/react-spline";
 
 type Props = {};
 
 const Footer = (props: Props) => {
   return (
     <div>
-      <Spline scene="https://prod.spline.design/laY8TzvWAnCZ3yq5/scene.splinecode" />
       <Wrapper>
         <Logo href="/">Bot Jungle</Logo>
         <WebsiteRights>

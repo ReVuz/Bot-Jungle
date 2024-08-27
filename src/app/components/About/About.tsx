@@ -1,5 +1,5 @@
 import React from "react";
-import { cn } from "../../../lib/utils";
+import { cn } from "../../lib/utils";
 import Image from "next/image";
 import createGlobe from "cobe";
 import { useEffect, useRef } from "react";
@@ -8,7 +8,7 @@ import { IconBrandYoutubeFilled } from "@tabler/icons-react";
 import Link from "next/link";
 
 export function About() {
- const features = [
+  const features = [
     {
       title: "Track Competition Progress",
       description:
@@ -111,7 +111,7 @@ export const SkeletonOne = () => {
         <div className="flex flex-1 w-full h-full flex-col space-y-2  ">
           {/* TODO */}
           <Image
-            src='https://images.unsplash.com/photo-1667986292516-f27450ae75a9?q=80&w=2576&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            src="https://images.unsplash.com/photo-1667986292516-f27450ae75a9?q=80&w=2576&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="header"
             width={800}
             height={800}

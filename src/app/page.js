@@ -1,37 +1,27 @@
 "use client";
-import Loading from "./components/loading";
-import HeroSection from "./components/HeroSection";
+import Loading from "./components/Loading/loading";
+import Lenis from "lenis";
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { FloatingNav } from "./components/Navbar/FloatingNav";
-import { About } from "./components/About";
-import { Steps } from "./components/Steps";
-import { Quote } from "./components/Quote";
-import Footer from "./components/Footer";
+import { About } from "./components/About/About";
+import { Steps } from "./components/Events/Steps";
+import { Quote } from "./components/Quote/Quote";
+import Footer from "./components/Footer/Footer";
 import { ExpandableCardDemo } from "./components/ExpandableCardDemo";
-import Sponsor from "./components/Sponsor";
-import Spline from "@splinetool/react-spline"; // Import Spline library
+import Sponsor from "./components/Sponsor/Sponsor";
+import Index from "./components/Hero/index";
 
 const Container = styled.div`
   height: 100vh;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
-  overflow-y: auto;
   scrollbar-width: none;
   color: white;
   background-color: transparent; /* Set background to transparent */
   &::-webkit-scrollbar {
     display: none;
   }
-`;
-
-const SplineContainer = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
 `;
 
 export default function Home() {
@@ -42,33 +32,39 @@ export default function Home() {
     // Simulate loading time
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 42); // Adjust this time as needed
+    }, 4200); // Adjust this time as needed
 
     return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const lenis = new Lenis();
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
   }, []);
 
   return (
     <main className="flex min-h-screen flex-col bg-[#121212]">
       {isLoading ? (
-        // <Loading />
-        <h1>Loading...</h1>
+        <Loading />
       ) : (
-        // <Container>
-        <div className="z-0 bg-black">
-          <SplineContainer>
-            <Spline scene="https://prod.spline.design/Y0RaBNGpPepinEO9/scene.splinecode" />
-          </SplineContainer>
-          <FloatingNav />
-          <div className="container mt-24 mx-auto px-12 py-4">
-            <HeroSection />
-            <About />
+        <Container>
+          <div className="z-0 bg-black">
+            <FloatingNav />
+            <Index />
             <Steps />
+            {/* <ExpandableCardDemo /> */}
             <Sponsor />
+            <About />
             <Quote />
             <Footer />
           </div>
-        </div>
-        // </Container>
+        </Container>
       )}
     </main>
   );
