@@ -111,7 +111,7 @@ export const SkeletonOne = () => {
         <div className="flex flex-1 w-full h-full flex-col space-y-2  ">
           {/* TODO */}
           <Image
-            src="https://images.unsplash.com/photo-1667986292516-f27450ae75a9?q=80&w=2576&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="/img/IMG-20240826-WA0010.jpg"
             alt="header"
             width={800}
             height={800}
@@ -138,7 +138,7 @@ export const SkeletonThree = () => {
           {/* TODO */}
           <IconBrandYoutubeFilled className="h-20 w-20 absolute z-10 inset-0 text-red-500 m-auto " />
           <Image
-            src="/img/roboticsthumbnail.png"
+            src="/img/IMG-20240826-WA0012.png"
             alt="header"
             width={800}
             height={800}
@@ -152,11 +152,11 @@ export const SkeletonThree = () => {
 
 export const SkeletonTwo = () => {
   const images = [
-    "https://images.unsplash.com/photo-1586374579358-9d19d632b6df?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?q=80&w=2672&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1562758778-e5638b5b6607?q=80&w=2160&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1661078483001-683e69a6fb97?q=80&w=2666&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1603356033288-acfcb54801e6?q=80&w=2680&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "/img/IMG-20240826-WA0013.png",
+    "/img/IMG-20240826-WA0015.png",
+    "/img/IMG-20240826-WA0016.png",
+    "/img/IMG-20240826-WA0017.png",
+    "/img/IMG-20240826-WA0019.png",
   ];
 
   const imageVariants = {

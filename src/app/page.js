@@ -61,7 +61,7 @@ export default function Home() {
             {/* <ExpandableCardDemo /> */}
             <Sponsor />
             <About />
-            <Quote />
+            {/* <Quote /> */}
             <Footer />
           </div>
         </Container>
