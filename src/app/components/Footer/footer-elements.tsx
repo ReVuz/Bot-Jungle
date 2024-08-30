@@ -1,15 +1,13 @@
 import styled from "styled-components";
 import Link from "next/link";
 
-export const Container = styled.footer`
+export const FooterContainer = styled.footer`
   background-color: black;
   width: 100%;
-  min-height: 120px;
+  min-height: 90px;
   position: relative;
   bottom: 0;
-  display: flex;
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
+  left: 0;
 `;
 
 export const Wrapper = styled.div`
@@ -17,11 +15,12 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   max-width: 80%;
-  margin: 1.2rem auto 0 auto;
+  margin: 0 auto;
+  padding: 1.2rem 0;
 
   @media (max-width: 820px) {
     flex-direction: column;
-    text-align: center; /* Center content horizontally on smaller screens */
+    text-align: center;
   }
 `;
 

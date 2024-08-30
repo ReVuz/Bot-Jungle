@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import {
+  FooterContainer,
   Logo,
   SocialMediaIcons,
   SocialMediaIconsLink,
@@ -19,7 +20,7 @@ type Props = {};
 
 const Footer = (props: Props) => {
   return (
-    <div>
+    <FooterContainer>
       <Wrapper>
         <Logo href="/">Bot Jungle</Logo>
         <WebsiteRights>
@@ -56,7 +57,7 @@ const Footer = (props: Props) => {
           </SocialMediaIconsLink>
         </SocialMediaIcons>
       </Wrapper>
-    </div>
+    </FooterContainer>
   );
 };
 
