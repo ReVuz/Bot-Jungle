@@ -15,7 +15,7 @@
     "@tabler/icons-react": "^3.12.0",
     "clsx": "^2.1.1",
     "cobe": "^0.6.3",
-    "framer-motion": "^11.3.30",
+    "framer-motion": "^11.3.31",
     "gsap": "^3.12.5",
     "jquery": "^3.7.1",
     "lenis": "^1.1.11",

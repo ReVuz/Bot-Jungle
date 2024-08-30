@@ -8,7 +8,14 @@ export function Steps() {
     <>
       <div className="w-full py-12" id="events">
         <h1 className="text-center text-4xl font-bold py-8">
-          <span className="text-white">Events</span>
+           <motion.span
+            className="text-white"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            Events
+          </motion.span>
         </h1>
         <div className="py-12 flex flex-col lg:flex-row items-center justify-center w-full gap-4 mx-auto px-8">
           <Card
