@@ -139,9 +139,6 @@ function Hero() {
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold">
             Bot Jungle
           </h1>
-          <a href="#" className="text-xs lg:text-sm uppercase mt-4">
-            Powered by IEEE
-          </a>
         </div>
 
         <div className="gallery flex flex-col gap-8 absolute inset-0 justify-center transform transition-transform duration-2000 ease-linear">
