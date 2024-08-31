@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { FloatingNav } from "./components/Navbar/FloatingNav";
 import { About } from "./components/About/About";
-import { Steps } from "./components/Events/Steps";
+import { EventPage } from "./components/Events/EventPage";
 import { Quote } from "./components/Quote/Quote";
 import Footer from "./components/Footer/Footer";
 import { ExpandableCardDemo } from "./components/ExpandableCardDemo";
@@ -57,7 +57,7 @@ export default function Home() {
           <div className="z-0 bg-black">
             <FloatingNav />
             <Index />
-            <Steps />
+            <EventPage />
             {/* <ExpandableCardDemo /> */}
             <Sponsor />
             <About />

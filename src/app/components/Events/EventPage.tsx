@@ -2,20 +2,15 @@
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { CanvasRevealEffect } from "./canvas-reveal-effect";
+import { useRouter } from "next/navigation";
 
-export function Steps() {
+export function EventPage() {
+  const router = useRouter();
   return (
     <>
       <div className="w-full py-12" id="events">
         <h1 className="text-center text-4xl font-bold py-8">
-           <motion.span
-            className="text-white"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            Events
-          </motion.span>
+          <span className="text-white">Events</span>
         </h1>
         <div className="py-12 flex flex-col lg:flex-row items-center justify-center w-full gap-4 mx-auto px-8">
           <Card
@@ -31,6 +26,7 @@ export function Steps() {
 
       Each game mode is designed to push the limits of the bots' design and the participants' control skills, making Bot Jungle an exciting and educational experience.
     `}
+            onNavigate={() => router.push("/botjungle")}
           >
             <CanvasRevealEffect
               animationSpeed={5.1}
@@ -52,6 +48,7 @@ export function Steps() {
 
       The event aims to foster innovation and teamwork among participants, encouraging them to push the boundaries of robotics technology.
     `}
+            onNavigate={() => router.push("/robowar")}
           >
             <CanvasRevealEffect
               animationSpeed={3}
@@ -78,6 +75,7 @@ export function Steps() {
 
       RoboSoccer is not just a test of robotics skills but also an exciting sporting event that brings the thrill of soccer to the robotics arena.
     `}
+            onNavigate={() => router.push("/robosoccer")}
           >
             <CanvasRevealEffect
               animationSpeed={3}
@@ -97,12 +95,14 @@ const Card = ({
   children,
   description,
   fullDescription,
+  onNavigate,
 }: {
   title: string;
   icon: React.ReactNode;
   children?: React.ReactNode;
   description: string;
   fullDescription: string;
+  onNavigate?: () => void;
 }) => {
   const [hovered, setHovered] = React.useState(false);
   const [isModalOpen, setIsModalOpen] = React.useState(false);
@@ -110,13 +110,20 @@ const Card = ({
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
+  const handleClick = () => {
+    if (onNavigate) {
+      onNavigate();
+    } else {
+      toggleModal();
+    }
+  };
 
   return (
     <>
       <div
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        onClick={toggleModal}
+        onClick={handleClick}
         className="border border-white group/canvas-card flex items-center justify-center max-w-sm w-full mx-auto p-4 relative lg:h-[20rem] cursor-pointer"
       >
         <Icon className="absolute h-6 w-6 -top-3 -left-3 text-white " />
@@ -211,11 +218,13 @@ const Modal = ({
         className="bg-black border-[1px] px-4 py-4 sm:px-8 sm:py-6 md:px-12 md:py-8 lg:px-12  lg:pt-6 max-w-full sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-4"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* <button onClick={onClose} className="absolute top-2 right-4 text-white">X</button> */}
+        <button onClick={onClose} className="absolute top-2 right-4 text-white">
+          X
+        </button>
         {children}
       </motion.div>
     </motion.div>
   );
 };
 
-export default Steps;
+export default EventPage;
