@@ -17,7 +17,7 @@ export default function Section() {
       className="relative flex items-center justify-center h-screen overflow-hidden"
       style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
     >
-      <div className="relative z-10 p-20 px-4 top-[-150px] mix-blend-difference text-white w-full h-full flex flex-col justify-between">
+      <div className=" relative z-10 p-20 px-4 top-[-150px] mix-blend-difference text-white w-full h-full flex flex-col justify-between">
         <p className="w-[50vw] text-[2vw] self-end uppercase "></p>
         <p className="text-[5vw] uppercase ">
           Where innovation <br />

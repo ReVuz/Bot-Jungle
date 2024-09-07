@@ -1,10 +1,13 @@
 import React, { useEffect } from "react";
 import { GlareCard } from "./glare-card";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Sponsor = () => {
   useEffect(() => {
-    // Animate the section heading and description
+    // Animate the section heading and description on scroll
     gsap.fromTo(
       ".section-title",
       { opacity: 0, y: -50 },
@@ -13,6 +16,12 @@ const Sponsor = () => {
         y: 0,
         duration: 1,
         ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".section-title",
+          start: "top 80%", // start animation when the title is near the viewport
+          end: "bottom 60%",
+          toggleActions: "play none none reverse", // triggers when entering and reverse on leaving
+        },
       }
     );
 
@@ -25,10 +34,16 @@ const Sponsor = () => {
         duration: 1,
         delay: 0.5,
         ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".section-description",
+          start: "top 80%", // start animation when the description is near the viewport
+          end: "bottom 60%",
+          toggleActions: "play none none reverse",
+        },
       }
     );
 
-    // Animate each sponsor card
+    // Animate each sponsor card on scroll
     gsap.fromTo(
       ".glare-card",
       { opacity: 0, y: 50 },
@@ -38,6 +53,12 @@ const Sponsor = () => {
         duration: 1,
         stagger: 0.3,
         ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".glare-card",
+          start: "top 85%", // start animation when each card is near the viewport
+          end: "bottom 50%",
+          toggleActions: "play none none reverse",
+        },
       }
     );
   }, []);
