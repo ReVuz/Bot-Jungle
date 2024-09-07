@@ -29,7 +29,6 @@ const Container = styled.div`
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     // Simulate loading time
@@ -57,7 +56,6 @@ export default function Home() {
         <Loading />
       ) : (
         <Container>
-          <Animate />
           <div className="z-0 bg-black">
             <Intro />
             <Description />
@@ -69,7 +67,7 @@ export default function Home() {
             {/* <ExpandableCardDemo /> */}
             <Sponsor />
             {/* <About /> */}
-            {/* <Quote /> */}
+            <Quote />
             <Footer />
           </div>
         </Container>
