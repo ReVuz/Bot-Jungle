@@ -20,7 +20,7 @@ export default function Description() {
         end: "bottom 50%",
         scrub: 1,
         onEnter: () => controls.start("visible"),
-        onLeave: () => controls.start("hidden"),
+        // onLeave: () => controls.start("hidden"),
         onEnterBack: () => controls.start("visible"),
         onLeaveBack: () => controls.start("hidden"),
       },
@@ -32,7 +32,7 @@ export default function Description() {
     // Animate each word
     words.forEach((word, index) => {
       tl.to(titleRef.current, {
-        duration: 0.5,
+        duration: 50,
         text: (_, target) => target.textContent + " " + word,
         ease: "power2.out",
       });
@@ -62,7 +62,7 @@ export default function Description() {
       opacity: 1,
       scale: 1,
       transition: {
-        duration: 3,
+        duration: 10,
         ease: "easeOut",
         staggerChildren: 0.1,
       },
