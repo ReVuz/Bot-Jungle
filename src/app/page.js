@@ -10,7 +10,10 @@ import { Quote } from "./components/Quote/Quote";
 import Footer from "./components/Footer/Footer";
 import { ExpandableCardDemo } from "./components/ExpandableCardDemo";
 import Sponsor from "./components/Sponsor/Sponsor";
-import Index from "./components/Hero/index";
+import Description from "./components/Hero/Description";
+import Intro from "./components/Hero/Intro";
+import Section from "./components/Hero/Section";
+import { Animate } from "./components/particles/particle";
 
 const Container = styled.div`
   height: 100vh;
@@ -32,7 +35,7 @@ export default function Home() {
     // Simulate loading time
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 4200); // Adjust this time as needed
+    }, 4000); // Adjust this time as needed
 
     return () => clearTimeout(timer);
   }, []);
@@ -54,13 +57,18 @@ export default function Home() {
         <Loading />
       ) : (
         <Container>
+          <Animate />
           <div className="z-0 bg-black">
-            <FloatingNav />
-            <Index />
+            <Intro />
+            <Description />
+            <Section />
+
+            {/* <FloatingNav /> */}
+            {/* <Index /> */}
             <EventPage />
             {/* <ExpandableCardDemo /> */}
             <Sponsor />
-            <About />
+            {/* <About /> */}
             {/* <Quote /> */}
             <Footer />
           </div>
