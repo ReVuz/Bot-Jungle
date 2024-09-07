@@ -12,7 +12,7 @@ export default function Intro() {
   const y = useTransform(scrollYProgress, [0, 1], ["0vh", "150vh"]);
 
   return (
-    <div className="h-screen overflow-hidden" ref={container}>
+    <div className="h-screen bg-black overflow-hidden" ref={container}>
       <motion.div
         style={{ y }}
         className="relative h-full flex justify-center items-center"

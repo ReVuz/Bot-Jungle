@@ -5,7 +5,7 @@ import Background from "../../../../public/img/IMG-20240826-WA0016.png";
 
 export default function Description() {
   return (
-    <div className="flex justify-center my-40">
+    <div className="flex justify-center my-40 bg-black">
       <div className="top-[-10vh] left-0 h-[120vh] w-full">
         <motion.div className="relative w-full h-full">
           <Image
