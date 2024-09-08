@@ -19,11 +19,12 @@ export default function Section() {
     >
       <div className=" relative z-10 p-20 px-4 top-[-150px] mix-blend-difference text-white w-full h-full flex flex-col justify-between">
         <p className="w-[50vw] text-[2vw] self-end uppercase "></p>
-        <p className="text-[5vw] uppercase ">
+       <p className="sm:text-[5vw] text-4xl leading-relaxed uppercase rotate-[270deg] md:rotate-0 md:translate-x-0 md:translate-y-0 -translate-x-[21vw] -translate-y-[16vw] ">
           Where innovation <br />
           and technology <br />
           come together
-        </p>
+      </p>
+
       </div>
       <div className="fixed top-[-10vh] left-0 h-[120vh] w-full">
         <motion.div style={{ y }} className="relative w-full h-full">
