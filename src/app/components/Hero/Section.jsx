@@ -14,10 +14,10 @@ export default function Section() {
   return (
     <div
       ref={container}
-      className="relative flex items-center justify-center h-screen overflow-hidden"
+      className="relative flex items-center justify-center h-[60vh] sm:h-screen overflow-hidden"
       style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
     >
-      <div className=" relative z-10 p-20 px-4 top-[-150px] mix-blend-difference text-white w-full h-full flex flex-col justify-between">
+      <div className="relative z-10 p-20 px-1 top-[-150px] mix-blend-difference text-white w-full h-full flex flex-col justify-between">
         <p className="w-[50vw] text-[2vw] self-end uppercase "></p>
         <p className="text-[5vw] uppercase ">
           Where innovation <br />
@@ -25,13 +25,14 @@ export default function Section() {
           come together
         </p>
       </div>
-      <div className="fixed top-[-10vh] left-0 h-[120vh] w-full">
+      <div className="fixed top-[-10vh] lg:h-[120vh] md:h-[120vh] h-[120vh] sm:h-[100vh] w-full">
         <motion.div style={{ y }} className="relative w-full h-full">
           <Image
             src={Background}
-            fill
+            // Remove `fill` attribute for smaller screens
+            layout="fill" // Use 'fill' for consistent size on large screens
             alt="image"
-            style={{ objectFit: "cover" }}
+            className="lg:bg-cover"
           />
         </motion.div>
       </div>

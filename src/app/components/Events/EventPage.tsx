@@ -4,6 +4,7 @@ import { CanvasRevealEffect } from "./canvas-reveal-effect";
 import { useRouter } from "next/navigation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import IMG20240826WA0014 from "../../../../public/img/IMG-20240826-WA0014.png"; // Import your image
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,6 +26,7 @@ export function EventPage() {
         opacity: 1,
         y: 0,
         duration: 1,
+        ease: "power4.out", // Smoother ease for better small screen performance
         scrollTrigger: {
           trigger: section,
           start: "top 80%",
@@ -43,7 +45,7 @@ export function EventPage() {
         scale: 1,
         duration: 0.8,
         stagger: 0.2,
-        ease: "power3.out",
+        ease: "power4.out", // Smoother ease for better small screen performance
         scrollTrigger: {
           trigger: section,
           start: "top 60%",
@@ -63,13 +65,13 @@ export function EventPage() {
       <h1 className="text-center text-4xl font-bold py-8" ref={titleRef}>
         <span className="text-white">Events</span>
       </h1>
-      <div className="py-12 flex flex-col lg:flex-row items-center justify-center w-full gap-4 mx-auto px-8">
+      <div className="py-12 flex flex-col lg:flex-row items-center justify-center w-full gap-8 mx-auto px-8">
         <Card
           ref={(el) => {
             cardsRef.current[0] = el;
           }}
           title="Bot Jungle"
-          icon={<AceternityIcon order="Bot Jungle" />}
+          // icon={<AceternityIcon order="Bot Jungle" />}
           description="A robotics competition where participants build and compete with their own bots. Features game modes like RoboSoccer, TAG, and a final showdown."
           fullDescription={`
       Bot Jungle is a thrilling robotics competition designed to challenge participants in various aspects of robotics engineering and control. The event includes multiple game modes to test different skills and strategies:
@@ -93,7 +95,7 @@ export function EventPage() {
             cardsRef.current[1] = el;
           }}
           title="RoboWar"
-          icon={<AceternityIcon order="RoboWar" />}
+          // icon={<AceternityIcon order="RoboWar" />}
           description="An electrifying competition where pre-built robots from various colleges engage in strategic combat, testing their durability, agility, and offensive capabilities."
           fullDescription={`
       RoboWar is an intense combat robotics competition where pre-built robots from different colleges clash in a battle of engineering prowess.
@@ -124,7 +126,7 @@ export function EventPage() {
             cardsRef.current[2] = el;
           }}
           title="RoboSoccer"
-          icon={<AceternityIcon order="RoboSoccer" />}
+          // icon={<AceternityIcon order="RoboSoccer" />}
           description="A soccer showdown where players control their bots using personal devices with a POV visual from the ESP32-CAM module, providing a realistic soccer game experience."
           fullDescription={`
       RoboSoccer offers a unique blend of robotics and sports, where participants control their bots in a thrilling soccer match. Key aspects include:
@@ -152,14 +154,12 @@ const Card = forwardRef(
   (
     {
       title,
-      icon,
       children,
       description,
       fullDescription,
       onNavigate,
     }: {
       title: string;
-      icon: React.ReactNode;
       children?: React.ReactNode;
       description: string;
       fullDescription: string;
@@ -189,6 +189,11 @@ const Card = forwardRef(
           onMouseLeave={() => setHovered(false)}
           onClick={handleClick}
           className="border border-white group/canvas-card flex items-center justify-center max-w-sm w-full mx-auto p-4 relative lg:h-[20rem] cursor-pointer"
+          style={{
+            backgroundImage: `url(${IMG20240826WA0014.src})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
         >
           <Icon className="absolute h-6 w-6 -top-3 -left-3 text-white " />
           <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-white " />
@@ -209,7 +214,7 @@ const Card = forwardRef(
 
           <div className="relative z-20">
             <div className="text-center group-hover/canvas-card:-translate-y-4 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] group-hover/canvas-card:opacity-0 transition duration-200 w-full mx-auto flex items-center justify-center">
-              {icon}
+              {/* {icon} */}
             </div>
             <h2 className="dark:text-white text-xl opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4 font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200">
               {title}

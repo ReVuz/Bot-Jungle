@@ -51,7 +51,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col bg-[#121212]">
+    <main className="flex min-h-screen flex-col bg-[#121212] ">
       {isLoading ? (
         <Loading />
       ) : (
@@ -63,15 +63,16 @@ export default function Home() {
             </div>
             <Description />
             <Section />
-
-            {/* <FloatingNav /> */}
-            {/* <Index /> */}
-            <EventPage />
-            {/* <ExpandableCardDemo /> */}
-            <Sponsor />
-            {/* <About /> */}
-            <Quote />
-            <Footer />
+            <div className="px-5">
+              {/* <FloatingNav /> */}
+              {/* <Index /> */}
+              <EventPage />
+              {/* <ExpandableCardDemo /> */}
+              <Sponsor />
+              {/* <About /> */}
+              <Quote />
+              <Footer />
+            </div>
           </div>
         </Container>
       )}

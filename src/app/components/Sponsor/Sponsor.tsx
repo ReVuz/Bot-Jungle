@@ -76,8 +76,8 @@ const Sponsor = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 mt-8 lg:ml-12 px-8">
-        <GlareCard className="glare-card flex flex-col items-center justify-center">
+      <div className="py-12 flex flex-col lg:flex-row items-center justify-center gap-8 mx-auto">
+        <GlareCard className=" glare-card flex flex-col items-center justify-center">
           <img
             src="/img/ieee-logo.png"
             alt="IEEE"

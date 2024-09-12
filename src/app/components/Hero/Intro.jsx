@@ -18,7 +18,7 @@ export default function Intro() {
         className="relative h-full flex justify-center items-center"
       >
         <video
-          className="w-full h-[56vh] sm:h-[80vh] md:h-full object-cover"
+          className="w-full h-[55vh] sm:h-[90vh] md:h-full object-cover"
           src="/img/Sequence 01_1.mp4"
           autoPlay
           loop
