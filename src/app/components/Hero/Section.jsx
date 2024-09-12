@@ -19,7 +19,7 @@ export default function Section() {
     >
       <div className="relative z-10 p-20 px-1 top-[-150px] mix-blend-difference text-white w-full h-full flex flex-col justify-between">
         <p className="w-[50vw] text-[2vw] self-end uppercase "></p>
-        <p className="text-[5vw] uppercase ">
+        <p className="sm:text-[5vw] text-4xl leading-relaxed sm:pr-4 uppercase rotate-[270deg] md:rotate-0 md:translate-x-0 md:translate-y-0 -translate-x-[21vw] -translate-y-[16vw] ">
           Where innovation <br />
           and technology <br />
           come together
