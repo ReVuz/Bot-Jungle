@@ -1,8 +1,11 @@
+"use client";
 import React from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
+import { ChevronDown } from "lucide-react";
 
 export default function Intro() {
+  const [showArrow, setShowArrow] = useState(true);
   const container = useRef();
   const { scrollYProgress } = useScroll({
     target: container,
@@ -10,9 +13,21 @@ export default function Intro() {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], ["0vh", "150vh"]);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setShowArrow(false);
+      } else {
+        setShowArrow(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <div className="h-screen bg-black overflow-hidden" ref={container}>
+    <div className="h-screen bg-black overflow-hidden relative" ref={container}>
       <motion.div
         style={{ y }}
         className="relative h-full flex justify-center items-center"
@@ -26,6 +41,12 @@ export default function Intro() {
           playsInline
         />
       </motion.div>
+      {showArrow && (
+        <div className="absolute bottom-10 left-0 right-0 flex flex-col items-center animate-bounce text-white md:hidden">
+          <p className="mb-2">Go Down</p>
+          <ChevronDown size={32} />
+        </div>
+      )}
     </div>
   );
 }
