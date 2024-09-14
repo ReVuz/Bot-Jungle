@@ -35,7 +35,7 @@ const Footer = (props: Props) => {
             <BsLinkedin />
           </SocialMediaIconsLink>
           <SocialMediaIconsLink
-            href="//www.instagram.com"
+            href="https://www.instagram.com/ieeerascusat?igsh=c3Z2dmlpajhiN2t4"
             target="_blank"
             aria-label="Instagram"
           >
