@@ -29,7 +29,7 @@ export default function Section() {
             }`}
             onMouseEnter={() => setHoverLeft(true)}
             onMouseLeave={() => setHoverLeft(false)}
-            style={{ height: "400px" }} // Fixed height for left content
+            style={{ minHeight: "300px" }} // Use minHeight for responsiveness
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
               What is BotJungle?
@@ -43,6 +43,8 @@ export default function Section() {
               extravaganza that fuels innovation. Get ready for intense coding
               sessions, groundbreaking solutions, and yes — plenty of robot
               battles! Join us and leave your mark on the tech world!
+              <br />
+              <br />
             </p>
           </motion.div>
 
@@ -55,7 +57,7 @@ export default function Section() {
             }`}
             onMouseEnter={() => setHoverRight(true)}
             onMouseLeave={() => setHoverRight(false)}
-            style={{ height: "400px" }} // Fixed height for right content
+            style={{ minHeight: "300px" }} // Use minHeight for responsiveness
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
               What is IEEE RAS?
