@@ -14,6 +14,7 @@ import Description from "./components/Hero/Description";
 import Intro from "./components/Hero/Intro";
 import Section from "./components/Hero/Section";
 import { Animate } from "./components/particles/particle";
+import FAQ from "./components/FAQ/FAQ";
 
 const Container = styled.div`
   height: 100vh;
@@ -63,14 +64,15 @@ export default function Home() {
             </div>
             <Description />
             <Section />
-            <div className="px-5">
+            <div className="px-5 z-20">
               {/* <FloatingNav /> */}
               {/* <Index /> */}
               <EventPage />
               {/* <ExpandableCardDemo /> */}
               <Sponsor />
               {/* <About /> */}
-              <Quote />
+              {/* <Quote /> */}
+              <FAQ />
               <Footer />
             </div>
           </div>
