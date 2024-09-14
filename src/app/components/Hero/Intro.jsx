@@ -13,6 +13,18 @@ export default function Intro() {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], ["0vh", "150vh"]);
+
+  // Smooth scrolling to the next section when the arrow is clicked
+  const handleArrowClick = () => {
+    // Calculate the target scroll position (a bit below the current view)
+    const targetPosition = window.scrollY + window.innerHeight * 1.2;
+    // Scroll to the target position smoothly
+    window.scrollTo({
+      top: targetPosition,
+      behavior: "smooth",
+    });
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 100) {
@@ -42,7 +54,10 @@ export default function Intro() {
         />
       </motion.div>
       {showArrow && (
-        <div className="absolute bottom-10 left-0 right-0 flex flex-col items-center animate-bounce text-white md:hidden">
+        <div
+          className="absolute bottom-10 left-0 right-0 flex flex-col items-center animate-bounce text-white cursor-pointer"
+          onClick={handleArrowClick} // Add click handler
+        >
           <p className="mb-2">Go Down</p>
           <ChevronDown size={32} />
         </div>
