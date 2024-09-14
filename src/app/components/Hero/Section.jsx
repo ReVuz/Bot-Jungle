@@ -1,80 +1,189 @@
 import { useScroll, useTransform, motion } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Section() {
   const container = useRef();
+  const leftContent = useRef();
+  const rightContent = useRef();
+  const leftText = useRef();
+  const rightText = useRef();
+
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start end", "end start"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
 
   const [hoverLeft, setHoverLeft] = useState(false);
   const [hoverRight, setHoverRight] = useState(false);
 
+  useEffect(() => {
+    const mm = gsap.matchMedia();
+
+    mm.add("(min-width: 768px)", () => {
+      // Desktop animations
+      gsap.fromTo(
+        [leftContent.current, rightContent.current],
+        {
+          y: 100,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          stagger: 0.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: container.current,
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      gsap.fromTo(
+        [leftText.current, rightText.current],
+        {
+          y: 20,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          stagger: 0.1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: container.current,
+            start: "top 60%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+
+    mm.add("(max-width: 767px)", () => {
+      // Mobile animations
+      gsap.fromTo(
+        [
+          leftContent.current,
+          rightContent.current,
+          leftText.current,
+          rightText.current,
+        ],
+        {
+          y: 50,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: container.current,
+            start: "top 90%",
+            end: "bottom 10%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+
+    return () => mm.revert();
+  }, []);
+
   return (
-    <div className="flex justify-center items-center relative h-screen md:h-[120vh] lg:h-[140vh] bg-black overflow-hidden">
+    <div className="flex justify-center items-center relative min-h-screen bg-black overflow-hidden">
+      <style jsx global>{`
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 3px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background-color: rgba(255, 255, 255, 0.5);
+          border-radius: 3px;
+        }
+      `}</style>
       <div
         ref={container}
-        className="relative flex items-center justify-center min-h-screen overflow-hidden px-4 sm:px-6 lg:px-8 py-12"
-        style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
+        className="relative flex items-center justify-center w-full px-4 sm:px-6 lg:px-8 py-12 md:py-24"
       >
         <div className="relative z-10 w-full max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row justify-between items-start text-white gap-8">
+          <div className="flex flex-col md:flex-row justify-between items-stretch text-white gap-8">
             {/* Left Content */}
             <motion.div
-              className={`w-full lg:w-1/2 p-4 sm:p-6 rounded-lg transition-all duration-300 ease-in-out ${
-                hoverLeft
-                  ? "bg-lime-500 transform scale-105"
-                  : "bg-green-700 bg-opacity-50 "
-              }`}
+              ref={leftContent}
+              className="bg-red-500 w-full md:w-1/2 p-6 md:p-10 flex flex-col justify-start items-start overflow-hidden"
+              style={{ y, scale: hoverLeft ? 1.02 : 1 }}
               onMouseEnter={() => setHoverLeft(true)}
               onMouseLeave={() => setHoverLeft(false)}
-              style={{ minHeight: "300px" }} // Use minHeight for responsiveness
             >
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-                What is BotJungle?
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-black">
+                What is IEEE RAS?
               </h2>
-              <p className="text-base sm:text-lg md:text-xl">
-                BOTJUNGLE: Where Robotics Meets Competition! The most thrilling
-                robotics event of the year is here with a bang! With exciting
-                challenges, cutting-edge technology, and invaluable learning
-                opportunities up for grabs, we&apos;re set to make history.
-                Organized by IEEE RAS CUSAT SB, BOTJUNGLE is a multi-event
-                robotic extravaganza that fuels innovation. Get ready for
-                intense coding sessions, groundbreaking solutions, and yes —
-                plenty of robot battles! Join us and leave your mark on the tech
-                world!
-                <br />
-                <br />
-              </p>
+              <div
+                ref={leftText}
+                className="text-white leading-relaxed text-base md:text-lg h-[300px] md:h-[400px] overflow-y-auto pr-2 custom-scrollbar"
+              >
+                <p>
+                  The IEEE Robotics and Automation Society Student Branch at
+                  Cochin University of Science and Technology (IEEE RAS CUSAT
+                  SB) is a dynamic hub for robotics enthusiasts. It serves as a
+                  platform for students to explore cutting-edge technologies,
+                  develop practical skills, and connect with industry leaders in
+                  robotics and automation.
+                </p>
+                {/* Add more content here to demonstrate scrolling */}
+                <p className="mt-4">
+                  Through workshops, competitions, and collaborative projects,
+                  IEEE RAS CUSAT SB fosters innovation and prepares students for
+                  the challenges of the rapidly evolving robotics industry.
+                </p>
+              </div>
             </motion.div>
 
             {/* Right Content */}
             <motion.div
-              className={`w-full lg:w-1/2 p-4 sm:p-6 rounded-lg transition-all duration-300 ease-in-out ${
-                hoverRight
-                  ? "bg-red-600 transform scale-105"
-                  : "bg-red-700 bg-opacity-50 "
-              }`}
+              ref={rightContent}
+              className="bg-black w-full md:w-1/2 p-6 md:p-10 flex flex-col justify-start items-start text-white rounded-lg overflow-hidden"
+              style={{ y, scale: hoverRight ? 1.02 : 1 }}
               onMouseEnter={() => setHoverRight(true)}
               onMouseLeave={() => setHoverRight(false)}
-              style={{ minHeight: "300px" }} // Use minHeight for responsiveness
             >
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-                What is IEEE RAS?
+              <h2 className="text-3xl md:text-4xl lg:text-5xl text-red-500 font-bold mb-4">
+                What is BotJungle?
               </h2>
-              <p className="text-base sm:text-lg md:text-xl">
-                The IEEE Robotics and Automation Society Student Branch at
-                Cochin University of Science and Technology (IEEE RAS CUSAT SB)
-                is a dynamic hub for robotics enthusiasts. It serves as a
-                platform for students to explore cutting-edge technologies,
-                develop practical skills, and connect with industry leaders in
-                robotics and automation. Through workshops, competitions, and
-                collaborative projects, IEEE RAS CUSAT SB fosters innovation and
-                prepares students for the challenges of the rapidly evolving
-                robotics industry.
-              </p>
+              <div
+                ref={rightText}
+                className="text-white text-base md:text-lg leading-relaxed h-[300px] md:h-[400px] overflow-y-auto pr-2 custom-scrollbar"
+              >
+                <p>
+                  BOTJUNGLE: Where Robotics Meets Competition! The most
+                  thrilling robotics event of the year is here with a bang! With
+                  exciting challenges, cutting-edge technology, and invaluable
+                  learning opportunities up for grabs, were set to make history.
+                  Organized by IEEE RAS CUSAT SB, BOTJUNGLE is a multi-event
+                  robotic extravaganza that fuels innovation.
+                </p>
+                {/* Add more content here to demonstrate scrolling */}
+                <p className="mt-4">
+                  Get ready for intense coding sessions, groundbreaking
+                  solutions, and yes — plenty of robot battles! Join us and
+                  leave your mark on the tech world!
+                </p>
+              </div>
             </motion.div>
           </div>
         </div>
