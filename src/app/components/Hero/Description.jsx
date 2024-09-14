@@ -92,7 +92,7 @@ export default function Description() {
         animate={controls}
         className="relative text-4xl sm:text-5xl md:text-6xl lg:text-[7.5vw] px-4 uppercase text-center max-w-[80vw] md:max-w-[60vw] lg:max-w-[50vw] leading-tight md:leading-none z-10"
       >
-        <h1 ref={titleRef} className="text-white"></h1>
+        <h1 ref={titleRef} className="text-white font-extrabold"></h1>
         {Array.from({ length: 50 }).map((_, index) => (
           <motion.span
             key={index}
