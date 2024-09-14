@@ -103,87 +103,64 @@ export default function Section() {
 
   return (
     <div className="flex justify-center items-center relative min-h-screen bg-black overflow-hidden">
-      <style jsx global>{`
-        .custom-scrollbar::-webkit-scrollbar {
-          width: 6px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-          background: rgba(255, 255, 255, 0.1);
-          border-radius: 3px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-          background-color: rgba(255, 255, 255, 0.5);
-          border-radius: 3px;
-        }
-      `}</style>
       <div
         ref={container}
         className="relative flex items-center justify-center w-full px-4 sm:px-6 lg:px-8 py-12 md:py-24"
       >
         <div className="relative z-10 w-full max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-stretch text-white gap-8">
+          <div className="flex flex-col md:flex-row justify-between items-start text-white gap-8">
             {/* Left Content */}
             <motion.div
               ref={leftContent}
-              className="bg-red-500 w-full md:w-1/2 p-6 md:p-10 flex flex-col justify-start items-start overflow-hidden"
+              className="bg-red-500 w-full md:w-1/2 p-6 md:p-10 flex flex-col justify-center items-start "
               style={{ y, scale: hoverLeft ? 1.02 : 1 }}
               onMouseEnter={() => setHoverLeft(true)}
               onMouseLeave={() => setHoverLeft(false)}
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-black">
-                What is IEEE RAS?
+                What is BotJungle?
               </h2>
-              <div
+              <p
                 ref={leftText}
-                className="text-white leading-relaxed text-base md:text-lg h-[300px] md:h-[400px] overflow-y-auto pr-2 custom-scrollbar"
+                className="text-white leading-relaxed text-base md:text-lg"
               >
-                <p>
-                  The IEEE Robotics and Automation Society Student Branch at
-                  Cochin University of Science and Technology (IEEE RAS CUSAT
-                  SB) is a dynamic hub for robotics enthusiasts. It serves as a
-                  platform for students to explore cutting-edge technologies,
-                  develop practical skills, and connect with industry leaders in
-                  robotics and automation.
-                </p>
-                {/* Add more content here to demonstrate scrolling */}
-                <p className="mt-4">
-                  Through workshops, competitions, and collaborative projects,
-                  IEEE RAS CUSAT SB fosters innovation and prepares students for
-                  the challenges of the rapidly evolving robotics industry.
-                </p>
-              </div>
+                BOTJUNGLE: Where Robotics Meets Competition! The most thrilling
+                robotics event of the year is here with a bang! With exciting
+                challenges, cutting-edge technology, and invaluable learning
+                opportunities up for grabs, we&apos;re set to make history.
+                Organized by IEEE RAS CUSAT SB, BOTJUNGLE is a multi-event
+                robotic extravaganza that fuels innovation. Get ready for
+                intense coding sessions, groundbreaking solutions, and yes —
+                plenty of robot battles! Join us and leave your mark on the tech
+                world!
+              </p>
             </motion.div>
 
             {/* Right Content */}
             <motion.div
               ref={rightContent}
-              className="bg-black w-full md:w-1/2 p-6 md:p-10 flex flex-col justify-start items-start text-white rounded-lg overflow-hidden"
+              className="bg-black w-full md:w-1/2 p-6 md:p-10 flex flex-col justify-center items-start text-white rounded-lg"
               style={{ y, scale: hoverRight ? 1.02 : 1 }}
               onMouseEnter={() => setHoverRight(true)}
               onMouseLeave={() => setHoverRight(false)}
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl text-red-500 font-bold mb-4">
-                What is BotJungle?
+                What is IEEE RAS?
               </h2>
-              <div
+              <p
                 ref={rightText}
-                className="text-white text-base md:text-lg leading-relaxed h-[300px] md:h-[400px] overflow-y-auto pr-2 custom-scrollbar"
+                className="text-white text-base md:text-lg leading-relaxed"
               >
-                <p>
-                  BOTJUNGLE: Where Robotics Meets Competition! The most
-                  thrilling robotics event of the year is here with a bang! With
-                  exciting challenges, cutting-edge technology, and invaluable
-                  learning opportunities up for grabs, were set to make history.
-                  Organized by IEEE RAS CUSAT SB, BOTJUNGLE is a multi-event
-                  robotic extravaganza that fuels innovation.
-                </p>
-                {/* Add more content here to demonstrate scrolling */}
-                <p className="mt-4">
-                  Get ready for intense coding sessions, groundbreaking
-                  solutions, and yes — plenty of robot battles! Join us and
-                  leave your mark on the tech world!
-                </p>
-              </div>
+                The IEEE Robotics and Automation Society Student Branch at
+                Cochin University of Science and Technology (IEEE RAS CUSAT SB)
+                is a dynamic hub for robotics enthusiasts. It serves as a
+                platform for students to explore cutting-edge technologies,
+                develop practical skills, and connect with industry leaders in
+                robotics and automation. Through workshops, competitions, and
+                collaborative projects, IEEE RAS CUSAT SB fosters innovation and
+                prepares students for the challenges of the rapidly evolving
+                robotics industry.
+              </p>
             </motion.div>
           </div>
         </div>
