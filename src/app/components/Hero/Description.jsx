@@ -6,34 +6,87 @@ import { TextPlugin } from "gsap/TextPlugin";
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
+const generateGibberish = (length) => {
+  const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  return Array.from(
+    { length },
+    () => characters[Math.floor(Math.random() * characters.length)]
+  ).join("");
+};
+
+const colors = [
+  "#FF0000", // Red
+  "#0000FF", // Blue
+];
+
+const getRandomColor = () => {
+  return colors[Math.floor(Math.random() * colors.length)];
+};
+
 export default function Description() {
   const containerRef = useRef(null);
   const titleRef = useRef(null);
   const controls = useAnimation();
 
   useEffect(() => {
-    const words = "BOT JUNGLE Powered by IEEE RAS CUSAT".split(" ");
+    const finalWords = [
+      "BOT",
+      "JUNGLE",
+      "Powered",
+      "by",
+      "IEEE",
+      "RAS",
+      "CUSAT",
+    ];
+    const gibberishWords = finalWords.map((word) =>
+      generateGibberish(word.length)
+    );
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "top 80%",
-        end: "bottom 50%",
-        scrub: 1,
-        onEnter: () => controls.start("visible"),
-        // onLeave: () => controls.start("hidden"),
-        onEnterBack: () => controls.start("visible"),
-        onLeaveBack: () => controls.start("hidden"),
+        start: "center center",
+        end: "center center",
+        scrub: 3,
+        onEnter: () => {
+          controls.start("visible");
+          tl.play();
+        },
+        onLeave: () => tl.pause(),
+        onEnterBack: () => tl.play(),
+        onLeaveBack: () => {
+          controls.start("hidden");
+          tl.pause();
+        },
       },
     });
 
-    // Clear the title
     tl.set(titleRef.current, { text: "" });
 
-    // Animate each word
-    words.forEach((word, index) => {
+    // Animate gibberish words with random colors
+    gibberishWords.forEach((word, index) => {
       tl.to(titleRef.current, {
-        duration: 50,
-        text: (_, target) => target.textContent + " " + word,
+        duration: 0.5,
+        text: (_, target) => {
+          const currentText = target.textContent.split(" ");
+          currentText[
+            index
+          ] = `<span style="color: ${getRandomColor()}">${word}</span>`;
+          return currentText.join(" ");
+        },
+        ease: "power2.out",
+      });
+    });
+
+    // Animate final words, keeping them white
+    finalWords.forEach((word, index) => {
+      tl.to(titleRef.current, {
+        duration: 0.4,
+        text: (_, target) => {
+          const currentText = target.textContent.split(" ");
+          currentText[index] = `<span style="color: #FFFFFF">${word}</span>`;
+          return currentText.join(" ");
+        },
         ease: "power2.out",
       });
     });
@@ -62,7 +115,7 @@ export default function Description() {
       opacity: 1,
       scale: 1,
       transition: {
-        duration: 10,
+        duration: 1,
         ease: "easeOut",
         staggerChildren: 0.1,
       },
@@ -92,7 +145,11 @@ export default function Description() {
         animate={controls}
         className="relative text-4xl sm:text-5xl md:text-6xl lg:text-[7.5vw] px-4 uppercase text-center max-w-[80vw] md:max-w-[60vw] lg:max-w-[50vw] leading-tight md:leading-none z-10"
       >
-        <h1 ref={titleRef} className="text-white font-extrabold"></h1>
+        <h1
+          ref={titleRef}
+          className="font-extrabold"
+          dangerouslySetInnerHTML={{ __html: "" }}
+        ></h1>
         {Array.from({ length: 50 }).map((_, index) => (
           <motion.span
             key={index}

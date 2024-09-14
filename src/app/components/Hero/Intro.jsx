@@ -17,7 +17,12 @@ export default function Intro() {
   // Smooth scrolling to the next section when the arrow is clicked
   const handleArrowClick = () => {
     // Calculate the target scroll position (a bit below the current view)
-    const targetPosition = window.scrollY + window.innerHeight * 1.2;
+    // Updated targetPosition calculation:
+    const targetPosition = Math.min(
+      window.scrollY + window.innerHeight * 1.25,
+      document.body.scrollHeight - window.innerHeight
+    );
+
     // Scroll to the target position smoothly
     window.scrollTo({
       top: targetPosition,
