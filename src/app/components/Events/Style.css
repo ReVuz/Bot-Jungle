@@ -9,7 +9,8 @@
   background-size: 300% 300%;
   cursor: pointer;
   backdrop-filter: blur(1rem);
-  border-radius: 5rem;
+  /* Set a more rounded border radius */
+  border-radius: 1rem; /* Adjust this value for desired roundness */ 
   transition: 0.5s;
   animation: gradient_301 5s ease infinite;
   border: double 4px transparent;
@@ -33,7 +34,8 @@
   overflow: hidden;
   transition: 0.5s;
   backdrop-filter: blur(1rem);
-  border-radius: 5rem;
+  /* Set a more rounded border radius */
+  border-radius: 1rem; /* Adjust this value for desired roundness */
 }
 
 strong {

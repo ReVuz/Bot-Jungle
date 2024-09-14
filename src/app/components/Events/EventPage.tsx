@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ideathon from "../../../../public/img/ideathon.jpg";
-import botjungle from "../../../../public/img/bg-hero.png";
+import botjungle from "../../../../public/img/coming-soon.jpg";
 import robowar from "../../../../public/img/robowar.png";
 import "./Style.css";
 
@@ -80,12 +80,12 @@ export function EventPage() {
           description="A platform where ideas come to life through robotics competitions. Experience thrilling challenges."
           fullDescription={`
   Ideathon is more than just a robotics competition; it's a crucible for innovation where participants bring their ideas to the forefront. This event features a range of exciting challenges designed to test skills in robotics engineering and control.    `}
-          onNavigate={() => handleNavigation("https://bit.ly/4778s7K")}
+          onNavigate={() => router.push("/ideathon")}
           backgroundImage={ideathon.src}
         >
           <CanvasRevealEffect
             animationSpeed={5.1}
-            containerClassName="bg-emerald-900"
+            containerClassName="bg-red-600"
           />
         </Card>
 
@@ -111,7 +111,7 @@ export function EventPage() {
         >
           <CanvasRevealEffect
             animationSpeed={3}
-            containerClassName="bg-black"
+            containerClassName="bg-lime-500"
             colors={[
               [236, 72, 153],
               [232, 121, 249],
@@ -142,7 +142,7 @@ export function EventPage() {
         >
           <CanvasRevealEffect
             animationSpeed={3}
-            containerClassName="bg-sky-600"
+            containerClassName="bg-red-600"
             colors={[[125, 211, 252]]}
           />
         </Card>
@@ -222,7 +222,7 @@ const Card = forwardRef(
             <div className="flex justify-between items-end mt-4">
               <button
                 type="button"
-                className="btn px-4 py-2 rounded opacity-0 group-hover/canvas-card:opacity-100 transition-opacity duration-200"
+                className="btn px-4 py-2 opacity-0 group-hover/canvas-card:opacity-100 transition-opacity duration-200"
                 onClick={(e) => {
                   e.stopPropagation();
                   if (onNavigate) onNavigate();
