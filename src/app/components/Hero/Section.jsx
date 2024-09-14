@@ -25,14 +25,14 @@ export default function Section() {
           come together
         </p>
       </div>
-      <div className="fixed top-[-10vh] lg:h-[120vh] md:h-[120vh] h-[120vh] sm:h-[100vh] w-full">
+      <div className="fixed top-[-10vh] lg:h-[120vh] md:h-[120vh] h-[120vh] w-full">
         <motion.div style={{ y }} className="relative w-full h-full">
           <Image
             src={Background}
             // Remove `fill` attribute for smaller screens
             layout="fill" // Use 'fill' for consistent size on large screens
             alt="image"
-            className="lg:bg-cover"
+            className="lg:bg-cover "
           />
         </motion.div>
       </div>

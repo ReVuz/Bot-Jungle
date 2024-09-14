@@ -12,7 +12,7 @@ export default function Description() {
   const controls = useAnimation();
 
   useEffect(() => {
-    const words = "BOT JUNGLE Powered by IEEE CUSAT".split(" ");
+    const words = "BOT JUNGLE Powered by IEEE RAS CUSAT".split(" ");
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,

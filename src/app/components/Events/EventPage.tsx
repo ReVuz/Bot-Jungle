@@ -4,7 +4,10 @@ import { CanvasRevealEffect } from "./canvas-reveal-effect";
 import { useRouter } from "next/navigation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import IMG20240826WA0014 from "../../../../public/img/IMG-20240826-WA0014.png"; // Import your image
+import ideathon from "../../../../public/img/ideathon.jpg";
+import botjungle from "../../../../public/img/bg-hero.png";
+import robowar from "../../../../public/img/robowar.png";
+import "./Style.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -59,7 +62,9 @@ export function EventPage() {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
-
+  const handleNavigation = (url) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
   return (
     <div className="w-full py-12" id="events" ref={sectionRef}>
       <h1 className="text-center text-4xl font-bold py-8" ref={titleRef}>
@@ -70,19 +75,13 @@ export function EventPage() {
           ref={(el) => {
             cardsRef.current[0] = el;
           }}
-          title="Bot Jungle"
+          title="Ideathon"
           // icon={<AceternityIcon order="Bot Jungle" />}
-          description="A robotics competition where participants build and compete with their own bots. Features game modes like RoboSoccer, TAG, and a final showdown."
+          description="A platform where ideas come to life through robotics competitions. Experience thrilling challenges."
           fullDescription={`
-      Bot Jungle is a thrilling robotics competition designed to challenge participants in various aspects of robotics engineering and control. The event includes multiple game modes to test different skills and strategies:
-      
-      1. RoboSoccer: Participants' bots compete in a soccer game, aiming to score goals against each other while navigating the field and avoiding obstacles.
-      2. TAG: A fast-paced game where bots must tag their opponents to score points, requiring quick reflexes and precise control.
-      3. Final Showdown: A culmination of the event where the best-performing bots face off in a series of challenges that test their overall capabilities.
-
-      Each game mode is designed to push the limits of the bots' design and the participants' control skills, making Bot Jungle an exciting and educational experience.
-    `}
-          onNavigate={() => router.push("/botjungle")}
+  Ideathon is more than just a robotics competition; it's a crucible for innovation where participants bring their ideas to the forefront. This event features a range of exciting challenges designed to test skills in robotics engineering and control.    `}
+          onNavigate={() => handleNavigation("https://bit.ly/4778s7K")}
+          backgroundImage={ideathon.src}
         >
           <CanvasRevealEffect
             animationSpeed={5.1}
@@ -107,7 +106,8 @@ export function EventPage() {
 
       The event aims to foster innovation and teamwork among participants, encouraging them to push the boundaries of robotics technology.
     `}
-          onNavigate={() => router.push("/robowar")}
+          onNavigate={() => handleNavigation("https://lu.ma/kqwathwh")}
+          backgroundImage={robowar.src}
         >
           <CanvasRevealEffect
             animationSpeed={3}
@@ -125,19 +125,20 @@ export function EventPage() {
           ref={(el) => {
             cardsRef.current[2] = el;
           }}
-          title="RoboSoccer"
+          title="Bot Jungle"
           // icon={<AceternityIcon order="RoboSoccer" />}
-          description="A soccer showdown where players control their bots using personal devices with a POV visual from the ESP32-CAM module, providing a realistic soccer game experience."
+          description="A robotics competition where participants build and compete with their own bots. Features game modes like RoboSoccer, TAG, and a final showdown."
           fullDescription={`
-      RoboSoccer offers a unique blend of robotics and sports, where participants control their bots in a thrilling soccer match. Key aspects include:
+      Bot Jungle is a thrilling robotics competition designed to challenge participants in various aspects of robotics engineering and control. The event includes multiple game modes to test different skills and strategies:
       
-      1. POV Control: Using personal devices, participants have a first-person view (POV) from their bots, thanks to the ESP32-CAM module, enhancing the realism and immersion of the game.
-      2. Team Strategy: Teams must work together to control their bots, pass the ball, and score goals, simulating a real soccer game environment.
-      3. Technical Challenges: The game tests the bots' mobility, coordination, and the participants' ability to control and strategize in a dynamic setting.
+      1. RoboSoccer: Participants' bots compete in a soccer game, aiming to score goals against each other while navigating the field and avoiding obstacles.
+      2. TAG: A fast-paced game where bots must tag their opponents to score points, requiring quick reflexes and precise control.
+      3. Final Showdown: A culmination of the event where the best-performing bots face off in a series of challenges that test their overall capabilities.
 
-      RoboSoccer is not just a test of robotics skills but also an exciting sporting event that brings the thrill of soccer to the robotics arena.
+      Each game mode is designed to push the limits of the bots' design and the participants' control skills, making Bot Jungle an exciting and educational experience.
     `}
-          onNavigate={() => router.push("/robosoccer")}
+          onNavigate={() => router.push("/botjungle")}
+          backgroundImage={botjungle.src}
         >
           <CanvasRevealEffect
             animationSpeed={3}
@@ -158,12 +159,14 @@ const Card = forwardRef(
       description,
       fullDescription,
       onNavigate,
+      backgroundImage,
     }: {
       title: string;
       children?: React.ReactNode;
       description: string;
       fullDescription: string;
       onNavigate?: () => void;
+      backgroundImage: string;
     },
     ref: React.Ref<HTMLDivElement>
   ) => {
@@ -173,13 +176,6 @@ const Card = forwardRef(
     const toggleModal = () => {
       setIsModalOpen(!isModalOpen);
     };
-    const handleClick = () => {
-      if (onNavigate) {
-        onNavigate();
-      } else {
-        toggleModal();
-      }
-    };
 
     return (
       <>
@@ -187,10 +183,9 @@ const Card = forwardRef(
           ref={ref}
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
-          onClick={handleClick}
           className="border border-white group/canvas-card flex items-center justify-center max-w-sm w-full mx-auto p-4 relative lg:h-[20rem] cursor-pointer"
           style={{
-            backgroundImage: `url(${IMG20240826WA0014.src})`,
+            backgroundImage: `url(${backgroundImage})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -212,16 +207,38 @@ const Card = forwardRef(
             )}
           </AnimatePresence>
 
-          <div className="relative z-20">
+          <div className="relative z-20 w-full h-full flex flex-col justify-between">
             <div className="text-center group-hover/canvas-card:-translate-y-4 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] group-hover/canvas-card:opacity-0 transition duration-200 w-full mx-auto flex items-center justify-center">
               {/* {icon} */}
             </div>
-            <h2 className="dark:text-white text-xl opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4 font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200">
-              {title}
-            </h2>
-            <h2 className="dark:text-white text-sm opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4 font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200">
-              {description}
-            </h2>
+            <div>
+              <h2 className="dark:text-white text-xl opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4 font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200">
+                {title}
+              </h2>
+              <h2 className="dark:text-white text-sm opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4 font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200">
+                {description}
+              </h2>
+            </div>
+            <div className="flex justify-between items-end mt-4">
+              <button
+                type="button"
+                className="btn px-4 py-2 rounded opacity-0 group-hover/canvas-card:opacity-100 transition-opacity duration-200"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  if (onNavigate) onNavigate();
+                }}
+              >
+                <strong>Register</strong>
+                <div id="container-stars">
+                  <div id="stars"></div>
+                </div>
+
+                <div id="glow">
+                  <div className="circle"></div>
+                  <div className="circle"></div>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
         <AnimatePresence>
@@ -238,6 +255,7 @@ const Card = forwardRef(
 );
 
 Card.displayName = "Card";
+
 const AceternityIcon = ({ order }: { order: string }) => {
   return (
     <button className="inline-flex h-12 animate-shimmer items-center justify-center border border-white px-6 font-medium text-white-200 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
