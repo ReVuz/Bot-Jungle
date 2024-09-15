@@ -214,7 +214,7 @@ export const Animate = () => {
           },
         },
         color: {
-          value: "#fa8080",
+          value: "#ee0000",
           animation: {
             h: {
               count: 0,

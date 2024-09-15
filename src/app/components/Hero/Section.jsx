@@ -112,7 +112,7 @@ export default function Section() {
             {/* Left Content */}
             <motion.div
               ref={leftContent}
-              className="bg-red-400 w-full md:w-1/2 p-6 md:p-10 flex flex-col justify-center items-start "
+              className="bg-red-500 w-full md:w-1/2 p-6 md:p-10 flex flex-col justify-center items-start "
               style={{ y, scale: hoverLeft ? 1.02 : 1 }}
               onMouseEnter={() => setHoverLeft(true)}
               onMouseLeave={() => setHoverLeft(false)}
@@ -144,7 +144,7 @@ export default function Section() {
               onMouseEnter={() => setHoverRight(true)}
               onMouseLeave={() => setHoverRight(false)}
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl text-red-400 font-bold mb-4">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl text-red-500 font-bold mb-4">
                 What is IEEE RAS?
               </h2>
               <p

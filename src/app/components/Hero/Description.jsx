@@ -15,8 +15,8 @@ const generateGibberish = (length) => {
 };
 
 const colors = [
-  "#FF7F7F", // Light Red
-  "#7F7FFF", // Light Blue
+  "#FF0000", // Red
+  "#0000FF", // Blue
 ];
 
 const getRandomColor = () => {
