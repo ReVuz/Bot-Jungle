@@ -214,7 +214,7 @@ export const Animate = () => {
           },
         },
         color: {
-          value: "#ff0000",
+          value: "#fa8080",
           animation: {
             h: {
               count: 0,
@@ -323,7 +323,7 @@ export const Animate = () => {
             mode: "delete",
             value: 0,
           },
-          value: 80,
+          value: 150,
         },
         opacity: {
           value: {

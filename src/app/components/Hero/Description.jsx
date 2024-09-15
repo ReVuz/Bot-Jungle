@@ -15,12 +15,13 @@ const generateGibberish = (length) => {
 };
 
 const colors = [
-  "#FF0000", // Red
-  "#0000FF", // Blue
+  "#FF7F7F", // Light Red
+  "#7F7FFF", // Light Blue
 ];
 
 const getRandomColor = () => {
-  return colors[Math.floor(Math.random() * colors.length)];
+  const nonWhiteColors = colors.filter((color) => color !== "#FFFFFF");
+  return nonWhiteColors[Math.floor(Math.random() * nonWhiteColors.length)];
 };
 
 export default function Description() {
@@ -47,7 +48,7 @@ export default function Description() {
         trigger: containerRef.current,
         start: "center center",
         end: "center center",
-        scrub: 3,
+        scrub: 4,
         onEnter: () => {
           controls.start("visible");
           tl.play();
