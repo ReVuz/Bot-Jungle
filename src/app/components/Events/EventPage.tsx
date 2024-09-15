@@ -80,7 +80,7 @@ export function EventPage() {
           description="A platform where ideas come to life through robotics competitions. Experience thrilling challenges."
           fullDescription={`
   Ideathon is more than just a robotics competition; it's a crucible for innovation where participants bring their ideas to the forefront. This event features a range of exciting challenges designed to test skills in robotics engineering and control.    `}
-          onNavigate={() => router.push("/ideathon")}
+          onNavigate={() => handleNavigation("https://bit.ly/4778s7K")}
           backgroundImage={ideathon.src}
         >
           <CanvasRevealEffect
