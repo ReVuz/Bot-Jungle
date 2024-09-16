@@ -15,6 +15,7 @@ import Intro from "./components/Hero/Intro";
 import Section from "./components/Hero/Section";
 import { Animate } from "./components/particles/particle";
 import FAQ from "./components/FAQ/FAQ";
+import { Analytics } from "@vercel/analytics/react";
 
 const Container = styled.div`
   height: 100vh;
@@ -53,6 +54,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col bg-[#121212] ">
+      <Analytics />
       {isLoading ? (
         <Loading />
       ) : (
