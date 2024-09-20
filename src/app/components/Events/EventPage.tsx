@@ -127,17 +127,15 @@ export function EventPage() {
           }}
           title="Bot Jungle"
           // icon={<AceternityIcon order="RoboSoccer" />}
-          description="A robotics competition where participants build and compete with their own bots. Features game modes like RoboSoccer, TAG, and a final showdown."
+          description="A robotics competition where participants build and compete with their own bots. Features gamemodes with points system and a final showdown"
           fullDescription={`
       Bot Jungle is a thrilling robotics competition designed to challenge participants in various aspects of robotics engineering and control. The event includes multiple game modes to test different skills and strategies:
       
-      1. RoboSoccer: Participants' bots compete in a soccer game, aiming to score goals against each other while navigating the field and avoiding obstacles.
-      2. TAG: A fast-paced game where bots must tag their opponents to score points, requiring quick reflexes and precise control.
-      3. Final Showdown: A culmination of the event where the best-performing bots face off in a series of challenges that test their overall capabilities.
+      Final Showdown: A culmination of the event where the best-performing bots face off in a series of challenges that test their overall capabilities.
 
       Each game mode is designed to push the limits of the bots' design and the participants' control skills, making Bot Jungle an exciting and educational experience.
     `}
-          onNavigate={() => handleNavigation("https://lu.ma/27merqdr")}
+          onNavigate={() => handleNavigation("https://lu.ma/kqwathwh")}
           backgroundImage={botjungle.src}
         >
           <CanvasRevealEffect

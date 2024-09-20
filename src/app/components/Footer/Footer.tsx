@@ -72,7 +72,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-8 text-center">
-          <p className="text-sm mb-2">Made by</p>
+          <p className="text-sm mb-2">Made with ❤️ by</p>
           <p className="text-sm flex flex-wrap justify-center gap-2">
             {creators.map((creator, index) => (
               <React.Fragment key={creator.name}>
