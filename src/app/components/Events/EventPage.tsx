@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ideathon from "../../../../public/img/ideathon.jpg";
-import botjungle from "../../../../public/img/coming-soon.jpg";
+import botjungle from "../../../../public/img/botjungle.png";
 import robowar from "../../../../public/img/robowar.png";
 import "./Style.css";
 
@@ -137,7 +137,7 @@ export function EventPage() {
 
       Each game mode is designed to push the limits of the bots' design and the participants' control skills, making Bot Jungle an exciting and educational experience.
     `}
-          onNavigate={() => router.push("/botjungle")}
+          onNavigate={() => handleNavigation("https://lu.ma/27merqdr")}
           backgroundImage={botjungle.src}
         >
           <CanvasRevealEffect
