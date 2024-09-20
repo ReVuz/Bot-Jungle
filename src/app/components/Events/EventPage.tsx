@@ -181,11 +181,12 @@ const Card = forwardRef(
           ref={ref}
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
-          className="border border-white group/canvas-card flex items-center justify-center max-w-sm w-full mx-auto p-4 relative lg:h-[20rem] cursor-pointer"
+          className="border border-white group/canvas-card card flex items-center justify-center max-w-sm w-full mx-auto p-4 relative lg:h-[20rem] cursor-pointer"
           style={{
             backgroundImage: `url(${backgroundImage})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
+            objectFit: "cover",
           }}
         >
           <Icon className="absolute h-6 w-6 -top-3 -left-3 text-white " />
