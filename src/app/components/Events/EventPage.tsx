@@ -135,7 +135,7 @@ export function EventPage() {
 
       Each game mode is designed to push the limits of the bots' design and the participants' control skills, making Bot Jungle an exciting and educational experience.
     `}
-          onNavigate={() => handleNavigation("https://lu.ma/kqwathwh")}
+          onNavigate={() => handleNavigation("https://lu.ma/27merqdr")}
           backgroundImage={botjungle.src}
         >
           <CanvasRevealEffect
