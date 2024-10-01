@@ -77,27 +77,33 @@ const Sponsor = () => {
       </div>
 
       <div className="py-12 flex flex-col lg:flex-row items-center justify-center gap-8 mx-auto">
-        <GlareCard className=" glare-card flex flex-col items-center justify-center">
-          <img
-            src="/img/ieee-logo.png"
-            alt="IEEE"
-            className="sponsor-logo h-20 sm:h-24 md:h-32 lg:h-42"
-          />
-        </GlareCard>
-        <GlareCard className="glare-card flex flex-col items-center justify-center">
-          <img
-            src="/img/IEEE-RAS.png"
-            alt="IEEE RAS"
-            className="sponsor-logo h-20 sm:h-24 md:h-32 lg:h-42 px-4 py-4"
-          />
-        </GlareCard>
-        <GlareCard className="glare-card flex flex-col items-center justify-center">
-          <img
-            src="/img/sbi-log.png"
-            alt="Alstom"
-            className="sponsor-logo h-20 sm:h-24 md:h-32 lg:h-42"
-          />
-        </GlareCard>
+        <a href="https://ieeecusatsb.in/">
+          <GlareCard className=" glare-card flex flex-col items-center justify-center">
+            <img
+              src="/img/ieee-logo.png"
+              alt="IEEE"
+              className="sponsor-logo h-20 sm:h-24 md:h-32 lg:h-42"
+            />
+          </GlareCard>
+        </a>
+        <a href="https://www.instagram.com/ieeerascusat?igsh=Y2p4YWRseXJ4ZmZ2">
+          <GlareCard className="glare-card flex flex-col items-center justify-center">
+            <img
+              src="/img/IEEE-RAS.png"
+              alt="IEEE RAS"
+              className="sponsor-logo h-20 sm:h-24 md:h-32 lg:h-42 px-4 py-4"
+            />
+          </GlareCard>
+        </a>
+        <a href="https://www.linkedin.com/company/state-bank-of-india/">
+          <GlareCard className="glare-card flex flex-col items-center justify-center">
+            <img
+              src="/img/sbi-log.png"
+              alt="Alstom"
+              className="sponsor-logo h-20 sm:h-24 md:h-32 lg:h-42"
+            />
+          </GlareCard>
+        </a>
       </div>
     </div>
   );

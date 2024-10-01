@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ideathon from "../../../../public/img/ideathon.jpg";
 import botjungle from "../../../../public/img/botjungle.png";
 import robowar from "../../../../public/img/robowar.png";
+import audience from "../../../../public/img/audience-reg.jpg";
 import "./Style.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -75,6 +76,23 @@ export function EventPage() {
           ref={(el) => {
             cardsRef.current[0] = el;
           }}
+          title="Audience Registration"
+          description="Join us to witness cutting-edge ideas and innovations come to life in the world of robotics and technology."
+          fullDescription={`
+  The Audience Registration offers you a front-row seat to a journey of creativity and technological advancements. Watch teams face thrilling challenges, showcasing their robotics expertise, engineering prowess, and innovative solutions. Be a part of this exhilarating event that celebrates problem-solving and collaboration on a grand stage.`}
+          onNavigate={() => handleNavigation("https://lu.ma/yw6ivhsv")}
+          backgroundImage={audience.src}
+        >
+          <CanvasRevealEffect
+            animationSpeed={5.1}
+            containerClassName="bg-red-600"
+          />
+        </Card>
+
+        <Card
+          ref={(el) => {
+            cardsRef.current[1] = el;
+          }}
           title="Ideathon"
           // icon={<AceternityIcon order="Bot Jungle" />}
           description="A platform where ideas come to life through robotics competitions. Experience thrilling challenges."
@@ -91,7 +109,7 @@ export function EventPage() {
 
         <Card
           ref={(el) => {
-            cardsRef.current[1] = el;
+            cardsRef.current[2] = el;
           }}
           title="RoboWar"
           // icon={<AceternityIcon order="RoboWar" />}
@@ -123,7 +141,7 @@ export function EventPage() {
 
         <Card
           ref={(el) => {
-            cardsRef.current[2] = el;
+            cardsRef.current[3] = el;
           }}
           title="Bot Jungle"
           // icon={<AceternityIcon order="RoboSoccer" />}
