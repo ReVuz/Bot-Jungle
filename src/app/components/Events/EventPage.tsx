@@ -85,7 +85,7 @@ export function EventPage() {
         >
           <CanvasRevealEffect
             animationSpeed={5.1}
-            containerClassName="bg-red-600"
+            containerClassName="bg-lime-600"
           />
         </Card>
 
