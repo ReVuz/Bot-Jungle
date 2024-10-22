@@ -95,6 +95,15 @@ const Sponsor = () => {
             />
           </GlareCard>
         </a>
+        <a href="http://kochi.ieeekerala.org/">
+          <GlareCard className="glare-card flex flex-col items-center justify-center">
+            <img
+              src="/img/IEEE-kochi.png"
+              alt="IEEE Kochi Subsection"
+              className="sponsor-logo h-20 sm:h-24 md:h-32 lg:h-42 px-4 py-4"
+            />
+          </GlareCard>
+        </a>
         <a href="https://www.linkedin.com/company/state-bank-of-india/">
           <GlareCard className="glare-card flex flex-col items-center justify-center">
             <img
